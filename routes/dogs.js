@@ -5,7 +5,9 @@ import Dog from '../models/Dog.js';
 // GET all dogs
 router.get('/', async (req, res) => {
   try {
+    console.log("fetching dogs...");
     const dogs = await Dog.find();
+    console.log("dogs fetched: ", dogs);
     res.json(dogs);
   } catch (err) {
     res.status(500).json({ message: err.message });
