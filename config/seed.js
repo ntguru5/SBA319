@@ -33,6 +33,41 @@ try {
       weight: 10,
       ownerId: 'owner789'
     },
+    {
+      name: 'Max',
+      breed: 'German Shepherd',
+      age: 5,
+      weight: 35,
+      ownerId: 'owner321'
+    },
+    {
+      name: 'Luna',
+      breed: 'Labrador',
+      age: 4,
+      weight: 28,
+      ownerId: 'owner654'
+    },
+    {
+      name: 'Daisy',
+      breed: 'Beagle',
+      age: 6,
+      weight: 20,
+      ownerId: 'owner987'
+    },
+    {
+      name: 'Rocky',
+      breed: 'Bulldog',
+      age: 8,
+      weight: 25,
+      ownerId: 'owner567'
+    },
+    {
+      name: 'Charlie',
+      breed: 'Boxer',
+      age: 7,
+      weight: 27,
+      ownerId: 'owner432'
+    }
   ];
 
   // Clear existing data
@@ -67,6 +102,27 @@ try {
       location: 'living room',
       notes: 'Accident indoors'
     },
+    {
+      dogId: createdDogs[3]._id,
+      type: 'poop',
+      time: new Date('2024-11-03T06:30:00'),
+      location: 'park',
+      notes: 'Small, firm stool'
+    },
+    {
+      dogId: createdDogs[4]._id,
+      type: 'pee',
+      time: new Date('2024-11-04T10:15:00'),
+      location: 'backyard',
+      notes: 'Quick pee'
+    },
+    {
+      dogId: createdDogs[5]._id,
+      type: 'poop',
+      time: new Date('2024-11-04T11:45:00'),
+      location: 'home',
+      notes: 'Loose stool'
+    }
   ];
 
   // Create new bathroom logs
@@ -96,6 +152,27 @@ try {
       time: new Date('2024-11-03T11:30:00'),
       notes: 'Normal heart rate'
     },
+    {
+      dogId: createdDogs[3]._id,
+      metricType: 'weight',
+      value: 36.2,
+      time: new Date('2024-11-05T08:00:00'),
+      notes: 'Minor weight gain'
+    },
+    {
+      dogId: createdDogs[4]._id,
+      metricType: 'temperature',
+      value: 100.8,
+      time: new Date('2024-11-06T12:30:00'),
+      notes: 'Normal temperature'
+    },
+    {
+      dogId: createdDogs[5]._id,
+      metricType: 'heart rate',
+      value: 115,
+      time: new Date('2024-11-06T14:30:00'),
+      notes: 'Slightly high heart rate post-exercise'
+    }
   ];
 
   // Create new health metrics
