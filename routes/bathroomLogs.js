@@ -23,6 +23,29 @@ router.post('/', async (req, res) => {
   }
 });
 
+// PATCH update bathroom log by ID
+router.patch('/:id', async (req, res) => {
+  try {
+    // Find the bathroom log by ID and update with new data from req.body
+    const updatedLog = await BathroomLog.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true } // Options to return the updated document and run validation
+    );
+
+    // Check if the log was found and updated
+    if (!updatedLog) {
+      return res.status(404).json({ message: 'Bathroom log not found' });
+    }
+
+    res.json(updatedLog);
+  } catch (err) {
+    console.error('Error updating bathroom log:', err);
+    res.status(400).json({ message: err.message });
+  }
+});
+
+
 // DELETE a bathroom log by ID
 router.delete('/:id', async (req, res) => {
   try {

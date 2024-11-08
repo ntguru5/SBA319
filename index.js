@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import dogRoutes from './routes/dogs.js';
 import bathroomLogRoutes from './routes/bathroomLogs.js';
+import healthMetricRoutes from './routes/healthLogs.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.use('/dogs', dogRoutes);
 app.use('/bathroom-logs', bathroomLogRoutes);
+app.use('/health-metrics', healthMetricRoutes);
 
 // start server
 app.listen(PORT, () => {
