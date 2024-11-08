@@ -33,4 +33,21 @@ router.patch('/:id', async (req, res) => {
   }
 });
 
+// DELETE health metric by ID
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedMetric = await HealthMetric.findByIdAndDelete(req.params.id);
+
+    // Check if the metric was found and deleted
+    if (!deletedMetric) {
+      return res.status(404).json({ message: 'Health metric not found' });
+    }
+
+    res.json({ message: 'Health metric deleted successfully' });
+  } catch (err) {
+    console.error('Error deleting health metric:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 export default router;
