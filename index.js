@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config";
 import dogRoutes from './routes/dogs.js';
+import bathroomLogRoutes from './routes/bathroomLogs.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/dogs', dogRoutes);
+app.use('/bathroom-logs', bathroomLogRoutes);
 
 // start server
 app.listen(PORT, () => {
